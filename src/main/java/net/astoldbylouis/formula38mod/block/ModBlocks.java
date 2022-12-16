@@ -1,5 +1,6 @@
-package net.astoldbylouis.formula38mod;
+package net.astoldbylouis.formula38mod.block;
 
+import net.astoldbylouis.formula38mod.Formula38Mod;
 import net.astoldbylouis.formula38mod.item.ModCreativeModeTab;
 import net.astoldbylouis.formula38mod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -33,6 +34,16 @@ public class ModBlocks {
                     UniformInt.of(3, 7)), ModCreativeModeTab.FORMULA38_TAB);
 
     public static final RegistryObject<Block> DEEPSLATE_ZIRCON_ORE = registerBlock("deepslate_zircon_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6F).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.FORMULA38_TAB);
+
+    public static final RegistryObject<Block> ENDSTONE_ZIRCON_BLOCK = registerBlock("endstone_zircon_block",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6F).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.FORMULA38_TAB);
+
+    public static final RegistryObject<Block> NETHERRACK_ZIRCON_BLOCK = registerBlock("netherrack_zircon_block",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6F).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)), ModCreativeModeTab.FORMULA38_TAB);
