@@ -1,6 +1,7 @@
 package net.astoldbylouis.formula38mod;
 
 import com.mojang.logging.LogUtils;
+import net.astoldbylouis.formula38mod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,6 +19,8 @@ public class Formula38Mod {
 
     public Formula38Mod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
