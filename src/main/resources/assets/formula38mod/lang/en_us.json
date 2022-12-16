@@ -1,6 +1,9 @@
 {
   "item.formula38mod.zircon" : "Zircon",
   "item.formula38mod.raw_zircon" : "Raw Zircon",
+  "block.formula38mod.zircon_block": "BLock of Zircon",
+  "block.formula38mod.zircon_ore": "BLock of Zircon Ore",
+  "block.formula38mod.deepslate_zircon_ore": "BLock of Deepslate Zircon Ore",
 
   "itemGroup.formula38tab" : "Formula38 Tab"
 }
