@@ -19,9 +19,10 @@ public class Formula38Mod {
 
     public Formula38Mod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
+
+        modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -29,10 +30,6 @@ public class Formula38Mod {
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
-
-//    @SubscribeEvent
-//    public void onServerStarting(ServerStartingEvent event) {
-//    }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
