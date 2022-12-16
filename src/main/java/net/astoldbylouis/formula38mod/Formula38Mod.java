@@ -3,6 +3,7 @@ package net.astoldbylouis.formula38mod;
 import com.mojang.logging.LogUtils;
 import net.astoldbylouis.formula38mod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -15,14 +16,12 @@ import org.slf4j.Logger;
 @Mod(Formula38Mod.MOD_ID)
 public class Formula38Mod {
     public static final String MOD_ID = "formula38mod";
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public Formula38Mod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
-
-        modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -30,6 +29,10 @@ public class Formula38Mod {
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
+
+//    @SubscribeEvent
+//    public void onServerStarting(ServerStartingEvent event) {
+//    }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
