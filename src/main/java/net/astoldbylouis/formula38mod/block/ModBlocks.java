@@ -38,12 +38,12 @@ public class ModBlocks {
                     .strength(6F).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)), ModCreativeModeTab.FORMULA38_TAB);
 
-    public static final RegistryObject<Block> ENDSTONE_ZIRCON_BLOCK = registerBlock("endstone_zircon_block",
+    public static final RegistryObject<Block> ENDSTONE_ZIRCON_ORE = registerBlock("endstone_zircon_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6F).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)), ModCreativeModeTab.FORMULA38_TAB);
 
-    public static final RegistryObject<Block> NETHERRACK_ZIRCON_BLOCK = registerBlock("netherrack_zircon_block",
+    public static final RegistryObject<Block> NETHERRACK_ZIRCON_ORE = registerBlock("netherrack_zircon_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6F).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)), ModCreativeModeTab.FORMULA38_TAB);
