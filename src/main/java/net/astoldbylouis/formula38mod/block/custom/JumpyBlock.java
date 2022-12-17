@@ -25,6 +25,11 @@ public class JumpyBlock extends Block {
                                  InteractionHand hand, BlockHitResult hitResult) {
         player.sendSystemMessage(Component.literal("Right clicked this!"));
 
+        // Message being call 4 times with one click
+        // Server: Main Hand & Off Hand
+        // Client: Main Hand & Off Hand
+        // Use "if statement" to fix
+
         return super.use(state, level, pos, player, hand, hitResult);
     }
 
