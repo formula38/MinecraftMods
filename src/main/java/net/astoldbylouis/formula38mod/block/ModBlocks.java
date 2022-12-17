@@ -2,6 +2,7 @@ package net.astoldbylouis.formula38mod.block;
 
 import net.astoldbylouis.formula38mod.Formula38Mod;
 import net.astoldbylouis.formula38mod.block.custom.JumpyBlock;
+import net.astoldbylouis.formula38mod.block.custom.ZirconLampBlock;
 import net.astoldbylouis.formula38mod.item.ModCreativeModeTab;
 import net.astoldbylouis.formula38mod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -53,6 +54,10 @@ public class ModBlocks {
             () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6F).requiresCorrectToolForDrops()), ModCreativeModeTab.FORMULA38_TAB);
 
+    public static final RegistryObject<Block> ZIRCON_LAMP = registerBlock("zircon_lamp",
+            () -> new ZirconLampBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6F).requiresCorrectToolForDrops()
+                    .lightLevel(state -> state.getValue(ZirconLampBlock.LIT) ? 15 : 0)), ModCreativeModeTab.FORMULA38_TAB);
 
 
     // Block Specific Helper Methods Used Above: To register blocks using registerBlock() method

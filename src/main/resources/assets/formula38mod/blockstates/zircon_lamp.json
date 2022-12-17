@@ -1,0 +1,6 @@
+{
+  "variants" : {
+    "lit=true" : { "model" : "formula38mod:block/zircon_lamp_on" },
+    "lii=false" : { "model" : "formula38mod:block/zircon_lamp_off" }
+  }
+}
