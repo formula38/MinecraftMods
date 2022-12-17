@@ -1,6 +1,3 @@
 {
-  "parent" : "block/cube_all",
-  "textures" : {
-    "all" : "formula38mod:block/zircon_lamp_on"
-  }
+  "parent" : "formula38mod:block/zircon_lamp_on"
 }

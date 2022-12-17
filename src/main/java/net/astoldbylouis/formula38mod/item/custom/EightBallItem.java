@@ -22,12 +22,14 @@ public class EightBallItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level,
+                                                  Player player,
+                                                  InteractionHand hand) {
+
         if (level.isClientSide && hand == InteractionHand.MAIN_HAND) {
             // Output a random number
             outputRandomNumber(player);
-            // Set a Cooldown
-            // This will have a cooldown of 20 tick = 1 second
+            // Set a Cooldown. This will have a cooldown of 20 tick = 1 second
             player.getCooldowns().addCooldown(this, 20);
         }
 
@@ -37,11 +39,16 @@ public class EightBallItem extends Item {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
         if (Screen.hasShiftDown()) {
-            components.add(Component
-                    .literal("Right click to get a random number!").withStyle(ChatFormatting.DARK_RED));
+            components.add(
+                    Component
+                            .literal("Right click to get a random number!")
+                            .withStyle(ChatFormatting.DARK_RED)
+            );
         } else {
-            components.add(Component
-                    .literal("Press SHIFT for more info.").withStyle(ChatFormatting.DARK_GREEN));
+            components.add(
+                    Component
+                            .literal("Press SHIFT for more info.")
+                            .withStyle(ChatFormatting.DARK_GREEN));
         }
 
 
@@ -49,12 +56,19 @@ public class EightBallItem extends Item {
     }
 
     // Helper Methods
-    private void outputRandomNumber(Player player) {
-        player.sendSystemMessage(Component.literal("Your number is " + getRandomNumber()));
+    private void outputRandomNumber(Player player)
+    {
+        player.sendSystemMessage(
+                Component
+                        .literal("Your number is " + getRandomNumber())
+        );
     }
 
-    private int getRandomNumber() {
+    private int getRandomNumber()
+    {
         // Makes random number between 0 and 9
-        return RandomSource.createNewThreadLocalInstance().nextInt(10);
+        return RandomSource
+                .createNewThreadLocalInstance()
+                .nextInt(10);
     }
 }

@@ -21,9 +21,13 @@ public class JumpyBlock extends Block {
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
+    public InteractionResult use(BlockState state, Level level,
+                                 BlockPos pos, Player player,
                                  InteractionHand hand, BlockHitResult hitResult) {
-        player.sendSystemMessage(Component.literal("Right clicked this!"));
+
+        player.sendSystemMessage(
+                Component
+                        .literal("Right clicked this!"));
 
         // Message being call 4 times with one click
         // Server: Main Hand & Off Hand
@@ -34,13 +38,18 @@ public class JumpyBlock extends Block {
     }
 
     @Override
-    public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+    public void stepOn(Level level, BlockPos pos,
+                       BlockState state, Entity entity) {
+
         if (entity instanceof LivingEntity livingEntity) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200));
+            livingEntity.addEffect(
+                    new MobEffectInstance(
+                            MobEffects.JUMP,
+                            200
+                    )
+            );
         }
 
         super.stepOn(level, pos, state, entity);
     }
-
-
 }
