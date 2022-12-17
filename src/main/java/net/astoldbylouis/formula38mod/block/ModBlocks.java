@@ -1,6 +1,7 @@
 package net.astoldbylouis.formula38mod.block;
 
 import net.astoldbylouis.formula38mod.Formula38Mod;
+import net.astoldbylouis.formula38mod.block.custom.JumpyBlock;
 import net.astoldbylouis.formula38mod.item.ModCreativeModeTab;
 import net.astoldbylouis.formula38mod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -47,6 +48,10 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6F).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)), ModCreativeModeTab.FORMULA38_TAB);
+
+    public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
+            () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6F).requiresCorrectToolForDrops()), ModCreativeModeTab.FORMULA38_TAB);
 
 
 
