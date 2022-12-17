@@ -41,4 +41,6 @@ public class JumpyBlock extends Block {
 
         super.stepOn(level, pos, state, entity);
     }
+
+
 }
