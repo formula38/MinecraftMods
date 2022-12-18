@@ -1,6 +1,6 @@
 {
   "type" : "forge:add_features",
   "biomes" : "#minecraft:is_overworld",
-  "feature" : "formula38mod:zircon_ore_placed",
+  "features" : "formula38mod:zircon_ore_placed",
   "step" : "underground_ores"
 }

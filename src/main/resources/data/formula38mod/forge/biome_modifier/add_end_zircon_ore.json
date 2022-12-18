@@ -1,6 +1,6 @@
 {
   "type" : "forge:add_features",
   "biomes" : "#minecraft:is_end",
-  "feature" : "formula38mod:end_zircon_ore_placed",
+  "features" : "formula38mod:end_zircon_ore_placed",
   "step" : "underground_ores"
 }
