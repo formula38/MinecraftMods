@@ -4,14 +4,17 @@ import com.google.common.base.Suppliers;
 import net.astoldbylouis.formula38mod.Formula38Mod;
 import net.astoldbylouis.formula38mod.block.ModBlocks;
 import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.OreFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.lang.module.Configuration;
 import java.util.List;
@@ -25,16 +28,15 @@ public class ModConfigureFeatures {
             Suppliers.memoize(
                     () -> List.of(
                             OreConfiguration.target(
-                                    OreFeature.STONE_ORE_REPLACEABLES,
+                                    OreFeatures.STONE_ORE_REPLACEABLES,
                                     ModBlocks.ZIRCON_ORE.get().defaultBlockState()
                             ),
                             OreConfiguration.target(
-                                    OreFeature.DEEPSLATE_ORE_REPLACEBLES,
+                                    OreFeatures.DEEPSLATE_ORE_REPLACEABLES,
                                     ModBlocks.DEEPSLATE_ZIRCON_ORE.get().defaultBlockState()
                             )
                     )
             );
-
     public static final Supplier<List<OreConfiguration.TargetBlockState>> END_ZIRCON_ORES =
             Suppliers.memoize(
                     () -> List.of(
@@ -44,12 +46,49 @@ public class ModConfigureFeatures {
                             )
                     )
             );
-
     public static final Supplier<List<OreConfiguration.TargetBlockState>> NETHER_ZIRCON_ORES =
             Suppliers.memoize(
                     () -> List.of(
-                            OreFeature.NETHER_ORE_REPLACEABLES,
-                            ModBlocks.NETHERRACK_ZIRCON_ORE.get().defaultBlockState()
+                            OreConfiguration.target(
+                                    OreFeatures.NETHER_ORE_REPLACEABLES,
+                                    ModBlocks.NETHERRACK_ZIRCON_ORE.get().defaultBlockState()
+
+                            )
+                    )
+            );
+
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> ZIRCON_ORE =
+            CONFIGURED_FEATURES.register(
+                    "zircon_ore",
+                    () -> new ConfiguredFeature<>(
+                            Feature.ORE,
+                            new OreConfiguration(
+                                    OVERWORLD_ZIRCON_ORES.get(),
+                                    7
+                            )
+                    )
+            );
+    public static final RegistryObject<ConfiguredFeature<?, ?>> END_ZIRCON_ORE =
+            CONFIGURED_FEATURES.register(
+                    "end_zircon_ore",
+                    () -> new ConfiguredFeature<>(
+                            Feature.ORE,
+                            new OreConfiguration(
+                                    END_ZIRCON_ORES.get(),
+                                    9
+                            )
+                    )
+            );
+    public static final RegistryObject<ConfiguredFeature<?, ?>> NETHER_ZIRCON_ORE =
+            CONFIGURED_FEATURES.register(
+                    "nether_zircon_ore",
+                    () -> new ConfiguredFeature<>(
+                            Feature.ORE,
+                            new OreConfiguration(
+                                    NETHER_ZIRCON_ORES.get(),
+                                    8
+                            )
                     )
             );
 
