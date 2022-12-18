@@ -2,6 +2,7 @@ package net.astoldbylouis.formula38mod;
 
 import net.astoldbylouis.formula38mod.block.ModBlocks;
 import net.astoldbylouis.formula38mod.item.ModItems;
+import net.astoldbylouis.formula38mod.villager.ModVillagers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
@@ -22,6 +23,7 @@ public class Formula38Mod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -29,7 +31,11 @@ public class Formula38Mod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        event.enqueueWork(
+                () -> {
+                    ModVillagers.registerPOIs();
+                }
+        );
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

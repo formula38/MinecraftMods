@@ -14,5 +14,7 @@
   "block.formula38mod.zircon_lamp": "Zircon Lamp",
   "block.formula38mod.blueberry_crop" : "Blueberry Crop",
 
+  "entity.minecraft.villager.formula38mod.jumpy_master" : "Jumpy Master",
+
   "itemGroup.formula38tab" : "Formula38 Tab"
 }
