@@ -2,6 +2,8 @@ package net.astoldbylouis.formula38mod;
 
 import net.astoldbylouis.formula38mod.block.ModBlocks;
 import net.astoldbylouis.formula38mod.item.ModItems;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -35,7 +37,11 @@ public class Formula38Mod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ItemBlockRenderTypes
+                    .setRenderLayer(
+                            ModBlocks.BLUEBERRY_CROP.get(),
+                            RenderType.cutout()
+                    );
         }
     }
 }

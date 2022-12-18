@@ -1,0 +1,6 @@
+{
+  "parent" : "minecraft:block/crop",
+  "textures" : {
+    "crop" : "formula38mod:block/blueberry_stage4"
+  }
+}

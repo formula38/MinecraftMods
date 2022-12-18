@@ -2,6 +2,8 @@
   "item.formula38mod.zircon" : "Zircon",
   "item.formula38mod.raw_zircon" : "Raw Zircon",
   "item.formula38mod.eight_ball" : "Eight Ball",
+  "item.formula38mod.blueberry" : "Blueberry",
+  "item.formula38mod.blueberry_seeds" : "Blueberry Seeds",
 
   "block.formula38mod.zircon_block": "BLock of Zircon",
   "block.formula38mod.zircon_ore": "BLock of Zircon Ore",
@@ -10,6 +12,7 @@
   "block.formula38mod.netherrack_zircon_ore": "BLock of Nether Rack Ore",
   "block.formula38mod.jumpy_block": "Jumpy Block",
   "block.formula38mod.zircon_lamp": "Zircon Lamp",
+  "block.formula38mod.blueberry_crop" : "Blueberry Crop",
 
   "itemGroup.formula38tab" : "Formula38 Tab"
 }
