@@ -65,7 +65,7 @@ public class ModConfigureFeatures {
                             Feature.ORE,
                             new OreConfiguration(
                                     OVERWORLD_ZIRCON_ORES.get(),
-                                    7
+                                    7 // rarity
                             )
                     )
             );

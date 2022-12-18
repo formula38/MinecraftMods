@@ -35,7 +35,7 @@ public class ModPlacedFeatures {
                             ModConfigureFeatures.END_ZIRCON_ORE.getHolder().get(),
                             commonOrePlacement(
                                     7, // viens per chunck
-                                    HeightRangePlacement.triangle(
+                                    HeightRangePlacement.uniform(
                                             VerticalAnchor.aboveBottom(-80),
                                             VerticalAnchor.aboveBottom(80))
                             )
@@ -48,22 +48,12 @@ public class ModPlacedFeatures {
                             ModConfigureFeatures.NETHER_ZIRCON_ORE.getHolder().get(),
                             commonOrePlacement(
                                     7, // viens per chunck
-                                    HeightRangePlacement.triangle(
+                                    HeightRangePlacement.uniform(
                                             VerticalAnchor.aboveBottom(-80),
                                             VerticalAnchor.aboveBottom(80))
                             )
                     )
             );
-
-
-
-
-
-
-
-
-
-
 
 
 
