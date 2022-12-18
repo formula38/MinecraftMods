@@ -26,8 +26,7 @@ public class ZirconLampBlock extends Block {
 
         // Only want this to happen on the server
         if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
-            level
-                    .setBlock(
+            level.setBlock(
                             pos,
                             state.cycle(LIT),
                             3

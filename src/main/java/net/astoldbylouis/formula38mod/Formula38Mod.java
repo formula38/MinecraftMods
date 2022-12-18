@@ -4,6 +4,7 @@ import net.astoldbylouis.formula38mod.block.ModBlocks;
 import net.astoldbylouis.formula38mod.item.ModItems;
 import net.astoldbylouis.formula38mod.painting.ModPaintings;
 import net.astoldbylouis.formula38mod.villager.ModVillagers;
+import net.astoldbylouis.formula38mod.world.features.ModConfigureFeatures;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
@@ -27,6 +28,8 @@ public class Formula38Mod {
 
         ModVillagers.register(modEventBus);
         ModPaintings.register(modEventBus);
+
+        ModConfigureFeatures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
