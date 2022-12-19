@@ -1,5 +1,6 @@
 package net.astoldbylouis.formula38mod.networking.packet;
 
+import net.astoldbylouis.formula38mod.thirst.PlayerThirstProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -58,8 +59,13 @@ public class DrinkWaterC2FPacket {
                 );
 
                 // Increase the water level / thirst level of player
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST)
+                        .ifPresent(
+                                thirst -> thirst.addThirst(1)
+                        );
 
                 // Output current thirst level
+
 
             } else {
                 // Notify the player that there is no water around
@@ -73,6 +79,16 @@ public class DrinkWaterC2FPacket {
             // Check if player is near water
 
             // Output the current thrust level
+            player.getCapability(PlayerThirstProvider.PLAYER_THIRST)
+                    .ifPresent(
+                            thirst -> {
+                                player.sendSystemMessage(
+                                        Component
+                                                .literal("Current thirst " + thirst.getThirst())
+                                                .withStyle(ChatFormatting.DARK_AQUA)
+                                );
+                            }
+                    );
         });
         return true;
     }
@@ -80,8 +96,8 @@ public class DrinkWaterC2FPacket {
     private boolean hasWaterAroundThem(ServerPlayer player, ServerLevel level, int size) {
 
         return level.getBlockStates(
-                player.getBoundingBox()
-                        .inflate(size)
+                        player.getBoundingBox()
+                                .inflate(size)
                 )
                 .filter(state -> state.is(Blocks.WATER))
                 .toArray().length > 0;

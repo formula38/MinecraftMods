@@ -6,6 +6,7 @@ import net.astoldbylouis.formula38mod.item.ModItems;
 import net.astoldbylouis.formula38mod.thirst.PlayerThirst;
 import net.astoldbylouis.formula38mod.thirst.PlayerThirstProvider;
 import net.astoldbylouis.formula38mod.villager.ModVillagers;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerProfession;
@@ -134,6 +135,7 @@ public class ModEvents {
                             thirst -> {
                                 if (thirst.getThirst() > 0 && event.player.getRandom().nextFloat() < 0.005f) {
                                     thirst.subThirst(1);
+                                    event.player.sendSystemMessage(Component.literal("Subtracted Water"));
                                 }
                             }
                     );
