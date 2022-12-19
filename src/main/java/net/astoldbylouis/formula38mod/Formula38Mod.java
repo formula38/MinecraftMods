@@ -2,6 +2,7 @@ package net.astoldbylouis.formula38mod;
 
 import net.astoldbylouis.formula38mod.block.ModBlocks;
 import net.astoldbylouis.formula38mod.item.ModItems;
+import net.astoldbylouis.formula38mod.networking.ModMessages;
 import net.astoldbylouis.formula38mod.painting.ModPaintings;
 import net.astoldbylouis.formula38mod.villager.ModVillagers;
 import net.astoldbylouis.formula38mod.world.features.ModConfigureFeatures;
@@ -39,11 +40,12 @@ public class Formula38Mod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(
-                () -> {
+        event.enqueueWork(() -> {
                     ModVillagers.registerPOIs();
                 }
         );
+
+        ModMessages.register();
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
