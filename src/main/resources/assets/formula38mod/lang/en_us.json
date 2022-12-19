@@ -19,5 +19,8 @@
   "key.category.formula38mod.formula38" : "Formula38 Mod",
   "key.formula38mod.drink_water" : "Drink Water",
 
+  "message.formula38mod.drink_water" : "Drinking Water",
+  "message.formula38mod.no_water" : "No Water Nearby",
+
   "itemGroup.formula38tab" : "Formula38 Tab"
 }

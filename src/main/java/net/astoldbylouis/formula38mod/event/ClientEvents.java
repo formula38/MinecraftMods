@@ -1,6 +1,9 @@
 package net.astoldbylouis.formula38mod.event;
 
 import net.astoldbylouis.formula38mod.Formula38Mod;
+import net.astoldbylouis.formula38mod.networking.ModMessages;
+import net.astoldbylouis.formula38mod.networking.packet.DrinkWaterC2FPacket;
+import net.astoldbylouis.formula38mod.networking.packet.ExampleC2SPacket;
 import net.astoldbylouis.formula38mod.util.KeyBinding;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -21,11 +24,14 @@ public class ClientEvents {
         @SubscribeEvent
         public static void OnKeyInput(InputEvent.Key event) {
             if (KeyBinding.DRINKING_KEY.consumeClick()) {
-                Minecraft.getInstance().player
-                        .sendSystemMessage(Component.literal(
-                                "Pressed a key!"
-                                )
-                        );
+                ModMessages.sendToServer(new DrinkWaterC2FPacket());
+//                ModMessages.sendToServer(new ExampleC2SPacket());
+
+//                Minecraft.getInstance().player
+//                        .sendSystemMessage(Component.literal(
+//                                "Pressed a key!"
+//                                )
+//                        );
             }
         }
     }
