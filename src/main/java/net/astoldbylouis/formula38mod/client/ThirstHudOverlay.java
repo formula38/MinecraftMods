@@ -45,22 +45,22 @@ public class ThirstHudOverlay {
 
         RenderSystem.setShaderTexture(0, FILLED_THIRST);
         for (int i = 0; i < 10; i++) {
-//            if (ClientThirstData.getPlayerThirst() > i) {
-//
-//                GuiComponent.blit(
-//                        poseStack,
-//                        x - 94 + (i * 9),
-//                        y - 54,
-//                        0,
-//                        0,
-//                        12,
-//                        12,
-//                        12,
-//                        12
-//                );
-//            } else {
-//                break;
-//            }
+            if (ClientThirstData.getPlayerThirst() > i) {
+
+                GuiComponent.blit(
+                        poseStack,
+                        x - 94 + (i * 9),
+                        y - 54,
+                        0,
+                        0,
+                        12,
+                        12,
+                        12,
+                        12
+                );
+            } else {
+                break;
+            }
         }
     }));
 

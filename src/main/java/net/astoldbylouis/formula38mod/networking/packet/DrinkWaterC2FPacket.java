@@ -62,21 +62,17 @@ public class DrinkWaterC2FPacket {
                 // Increase the water level / thirst level of player
                 player.getCapability(PlayerThirstProvider.PLAYER_THIRST)
                         .ifPresent(
-                                thirst -> thirst.addThirst(1)
-                        );
-
-                // Output current thirst level
-                player.getCapability(PlayerThirstProvider.PLAYER_THIRST)
-                        .ifPresent(
                                 thirst -> {
+                                    thirst.addThirst(1);
                                     player.sendSystemMessage(
-                                            Component
-                                                    .literal("Current thirst " + thirst.getThirst())
-                                                    .withStyle(ChatFormatting.DARK_AQUA)
+                                            Component.literal("Current thirst: " + thirst.getThirst())
+                                                    .withStyle(ChatFormatting.AQUA)
                                     );
                                     ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()), player);
                                 }
                         );
+
+                // Output current thirst level
 
 
 
@@ -89,7 +85,6 @@ public class DrinkWaterC2FPacket {
                 );
 
             }
-            // Check if player is near water
 
             // Output the current thrust level
             player.getCapability(PlayerThirstProvider.PLAYER_THIRST)
@@ -97,9 +92,10 @@ public class DrinkWaterC2FPacket {
                             thirst -> {
                                 player.sendSystemMessage(
                                         Component
-                                                .literal("Current thirst " + thirst.getThirst())
+                                                .literal("Current thirst: " + thirst.getThirst())
                                                 .withStyle(ChatFormatting.DARK_AQUA)
                                 );
+                                ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()), player);
                             }
                     );
         });
