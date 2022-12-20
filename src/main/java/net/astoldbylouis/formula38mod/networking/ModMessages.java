@@ -1,8 +1,10 @@
 package net.astoldbylouis.formula38mod.networking;
 
 import net.astoldbylouis.formula38mod.Formula38Mod;
+import net.astoldbylouis.formula38mod.client.ClientThirstData;
 import net.astoldbylouis.formula38mod.networking.packet.DrinkWaterC2FPacket;
 import net.astoldbylouis.formula38mod.networking.packet.ExampleC2SPacket;
+import net.astoldbylouis.formula38mod.networking.packet.ThirstDataSyncS2CPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkDirection;
@@ -46,6 +48,12 @@ public class ModMessages {
 //                .encoder(ExampleC2SPacket::toBytes)
 //                .consumerMainThread(ExampleC2SPacket::handle)
 //                .add();
+
+        net.messageBuilder(ThirstDataSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(ThirstDataSyncS2CPacket::new)
+                .encoder(ThirstDataSyncS2CPacket::toBytes)
+                .consumerMainThread(ThirstDataSyncS2CPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {

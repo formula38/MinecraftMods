@@ -1,14 +1,13 @@
 package net.astoldbylouis.formula38mod.event;
 
 import net.astoldbylouis.formula38mod.Formula38Mod;
+import net.astoldbylouis.formula38mod.client.ThirstHudOverlay;
 import net.astoldbylouis.formula38mod.networking.ModMessages;
 import net.astoldbylouis.formula38mod.networking.packet.DrinkWaterC2FPacket;
-import net.astoldbylouis.formula38mod.networking.packet.ExampleC2SPacket;
 import net.astoldbylouis.formula38mod.util.KeyBinding;
-import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -44,9 +43,12 @@ public class ClientEvents {
         @SubscribeEvent
         public static void onKeyRegister(RegisterKeyMappingsEvent event) {
             event.register(KeyBinding.DRINKING_KEY);
-
         }
 
+        @SubscribeEvent
+        public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+            event.registerAboveAll("thirst", ThirstHudOverlay.HUD_THIRST);
+        }
     }
 
 

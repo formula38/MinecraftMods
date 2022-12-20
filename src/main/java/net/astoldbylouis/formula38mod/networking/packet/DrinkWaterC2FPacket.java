@@ -1,5 +1,6 @@
 package net.astoldbylouis.formula38mod.networking.packet;
 
+import net.astoldbylouis.formula38mod.networking.ModMessages;
 import net.astoldbylouis.formula38mod.thirst.PlayerThirstProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
@@ -65,6 +66,18 @@ public class DrinkWaterC2FPacket {
                         );
 
                 // Output current thirst level
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST)
+                        .ifPresent(
+                                thirst -> {
+                                    player.sendSystemMessage(
+                                            Component
+                                                    .literal("Current thirst " + thirst.getThirst())
+                                                    .withStyle(ChatFormatting.DARK_AQUA)
+                                    );
+                                    ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()), player);
+                                }
+                        );
+
 
 
             } else {
