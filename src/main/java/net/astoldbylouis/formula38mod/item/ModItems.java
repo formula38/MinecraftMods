@@ -83,7 +83,7 @@ public class ModItems {
             ITEMS.register(
                     "kaupensword",
                     () -> new SwordItem(Tiers.DIAMOND,
-                                    10,
+                                    19,
                                     5f,
                                     new Item.Properties()
                                             .tab(ModCreativeModeTab.FORMULA38_TAB)
