@@ -79,6 +79,18 @@ public class ModItems {
                     )
             );
 
+    public static final RegistryObject<Item> KAUPENSWORD =
+            ITEMS.register(
+                    "kaupensword",
+                    () -> new SwordItem(Tiers.DIAMOND,
+                                    10,
+                                    5f,
+                                    new Item.Properties()
+                                            .tab(ModCreativeModeTab.FORMULA38_TAB)
+                                            .stacksTo(1)
+                    )
+            );
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
