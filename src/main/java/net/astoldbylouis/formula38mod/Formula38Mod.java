@@ -1,6 +1,8 @@
 package net.astoldbylouis.formula38mod;
 
 import net.astoldbylouis.formula38mod.block.ModBlocks;
+import net.astoldbylouis.formula38mod.fluid.ModFluidTypes;
+import net.astoldbylouis.formula38mod.fluid.ModFluids;
 import net.astoldbylouis.formula38mod.item.ModItems;
 import net.astoldbylouis.formula38mod.networking.ModMessages;
 import net.astoldbylouis.formula38mod.painting.ModPaintings;
@@ -34,6 +36,9 @@ public class Formula38Mod {
         ModConfigureFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -57,6 +62,18 @@ public class Formula38Mod {
                     .setRenderLayer(
                             ModBlocks.BLUEBERRY_CROP.get(),
                             RenderType.cutout()
+                    );
+
+            ItemBlockRenderTypes
+                    .setRenderLayer(
+                            ModFluids.SOURCE_SOAP_WATER.get(),
+                            RenderType.translucent()
+                    );
+
+            ItemBlockRenderTypes
+                    .setRenderLayer(
+                            ModFluids.FLOWING_SOAP_WATER.get(),
+                            RenderType.translucent()
                     );
         }
     }
