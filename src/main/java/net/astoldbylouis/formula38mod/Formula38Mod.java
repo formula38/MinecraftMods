@@ -1,6 +1,7 @@
 package net.astoldbylouis.formula38mod;
 
 import net.astoldbylouis.formula38mod.block.ModBlocks;
+import net.astoldbylouis.formula38mod.block.entity.ModBlockEntities;
 import net.astoldbylouis.formula38mod.fluid.ModFluidTypes;
 import net.astoldbylouis.formula38mod.fluid.ModFluids;
 import net.astoldbylouis.formula38mod.item.ModItems;
@@ -38,6 +39,8 @@ public class Formula38Mod {
 
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
