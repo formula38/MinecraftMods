@@ -27,7 +27,7 @@ public class GemInfusingStationMenu extends AbstractContainerMenu {
     }
 
     public GemInfusingStationMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(, id);
+        super(ModMenuTypes.GEM_INFUSING_STATION_MENU.get(), id);
         checkContainerSize(inv, 3); // matches itemHandler amount in GemInfusingStationBlockEntity
         blockEntity = (GemInfusingStationBlockEntity) entity;
         this.level = inv.player.level;

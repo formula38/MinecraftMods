@@ -7,6 +7,7 @@ import net.astoldbylouis.formula38mod.fluid.ModFluids;
 import net.astoldbylouis.formula38mod.item.ModItems;
 import net.astoldbylouis.formula38mod.networking.ModMessages;
 import net.astoldbylouis.formula38mod.painting.ModPaintings;
+import net.astoldbylouis.formula38mod.screen.ModMenuTypes;
 import net.astoldbylouis.formula38mod.villager.ModVillagers;
 import net.astoldbylouis.formula38mod.world.features.ModConfigureFeatures;
 import net.astoldbylouis.formula38mod.world.features.ModPlacedFeatures;
@@ -41,6 +42,7 @@ public class Formula38Mod {
         ModFluidTypes.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

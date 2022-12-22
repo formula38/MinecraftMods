@@ -1,6 +1,7 @@
 package net.astoldbylouis.formula38mod.block.entity;
 
 import net.astoldbylouis.formula38mod.item.ModItems;
+import net.astoldbylouis.formula38mod.screen.GemInfusingStationMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -74,7 +75,7 @@ public class GemInfusingStationBlockEntity extends BlockEntity implements MenuPr
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-        return null;
+        return new GemInfusingStationMenu(id, inventory, this, this.data);
     }
 
     @Override
