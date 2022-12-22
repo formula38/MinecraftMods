@@ -112,6 +112,7 @@ public class GemInfusingStationBlockEntity extends BlockEntity implements MenuPr
         super.load(nbt);
 
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
+        progress = nbt.getInt("gem_infusing_station_progress");
     }
 
     public void drops() {
