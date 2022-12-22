@@ -7,10 +7,12 @@ import net.astoldbylouis.formula38mod.fluid.ModFluids;
 import net.astoldbylouis.formula38mod.item.ModItems;
 import net.astoldbylouis.formula38mod.networking.ModMessages;
 import net.astoldbylouis.formula38mod.painting.ModPaintings;
+import net.astoldbylouis.formula38mod.screen.GemInfusingStationScreen;
 import net.astoldbylouis.formula38mod.screen.ModMenuTypes;
 import net.astoldbylouis.formula38mod.villager.ModVillagers;
 import net.astoldbylouis.formula38mod.world.features.ModConfigureFeatures;
 import net.astoldbylouis.formula38mod.world.features.ModPlacedFeatures;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
@@ -79,6 +81,12 @@ public class Formula38Mod {
                     .setRenderLayer(
                             ModFluids.FLOWING_SOAP_WATER.get(),
                             RenderType.translucent()
+                    );
+
+            MenuScreens
+                    .register(
+                            ModMenuTypes.GEM_INFUSING_STATION_MENU.get(),
+                            GemInfusingStationScreen::new
                     );
         }
     }

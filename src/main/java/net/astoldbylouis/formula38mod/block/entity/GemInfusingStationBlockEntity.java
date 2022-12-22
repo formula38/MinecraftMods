@@ -104,6 +104,7 @@ public class GemInfusingStationBlockEntity extends BlockEntity implements MenuPr
         super.saveAdditional(nbt);
 
         nbt.put("inventory", itemHandler.serializeNBT());
+        nbt.putInt("gem_infusing_station_progress", this.progress);
     }
 
     @Override
