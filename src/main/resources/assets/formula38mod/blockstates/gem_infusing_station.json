@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "formula38mod:block/gem_infusing_station"
+    },
+    "facing=south": {
+      "model": "formula38mod:block/gem_infusing_station",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "formula38mod:block/gem_infusing_station",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "formula38mod:block/gem_infusing_station",
+      "y": 90
+    }
+  }
+}

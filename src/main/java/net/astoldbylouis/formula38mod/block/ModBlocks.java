@@ -2,6 +2,7 @@ package net.astoldbylouis.formula38mod.block;
 
 import net.astoldbylouis.formula38mod.Formula38Mod;
 import net.astoldbylouis.formula38mod.block.custom.BlueberryCropBlock;
+import net.astoldbylouis.formula38mod.block.custom.GemInfusingStationBlock;
 import net.astoldbylouis.formula38mod.block.custom.JumpyBlock;
 import net.astoldbylouis.formula38mod.block.custom.ZirconLampBlock;
 import net.astoldbylouis.formula38mod.fluid.ModFluids;
@@ -149,6 +150,20 @@ public class ModBlocks {
                             BlockBehaviour.Properties
                                     .copy(Blocks.WATER)
                     )
+            );
+
+    public static final RegistryObject<Block> GEM_INFUSING_STATION =
+            registerBlock(
+                    "gem_infusing_station",
+                    () -> new GemInfusingStationBlock(
+                            BlockBehaviour
+                                    .Properties
+                                    .of(Material.METAL)
+                                    .strength(6F)
+                                    .requiresCorrectToolForDrops()
+                                    .noOcclusion()
+                    ),
+                    ModCreativeModeTab.FORMULA38_TAB
             );
 
 
