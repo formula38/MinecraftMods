@@ -9,7 +9,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -177,7 +176,7 @@ public class GemInfusingStationBlockEntity extends BlockEntity implements MenuPr
                 canInsertItemIntoOutputSlot(inventory, new ItemStack(ModItems.ZIRCON.get()), 1);
     }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack stack) {
+    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack stack, int i) {
         return inventory.getItem(2).getItem() == stack.getItem() || inventory.getItem(2).isEmpty();
     }
 
